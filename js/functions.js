@@ -1,5 +1,5 @@
 // Functions
-// Slide to the left (affecting buttons as well)
+// Sliding to the left (affecting buttons as well)
 function slideLeft() {
     var activeImg = $("img.active");
     var activeBtn = $(".fa-circle.active");
@@ -17,7 +17,7 @@ function slideLeft() {
     }
 }
 
-// Slide to the right (affecting buttons as well)
+// Sliding to the right (affecting buttons as well)
 function slideRight() {
     var activeImg = $("img.active");
     var activeBtn = $(".fa-circle.active");
@@ -33,7 +33,7 @@ function slideRight() {
         activeBtn.removeClass("active");
         activeBtn.next().addClass("active");
     }
-};
+}
 
 // Matching blue buttons with respective images
 function clickButton() {
@@ -42,9 +42,9 @@ function clickButton() {
     $(this).addClass("active");
     
     // Variable
-    var matchingImg = $(".images > img");
+    var matchingImg = $(".images > img").eq($(this).index());
 
-    // Matching respective image
-    matchingImg.eq($(this).index()).addClass('active');
-    matchingImg.eq($(this).index()).siblings().removeClass('active');
+    // Matching respective images
+    matchingImg.addClass('active');
+    matchingImg.siblings().removeClass('active');
 }

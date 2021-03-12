@@ -1,13 +1,22 @@
 // Create a Carousel
 
-// Click function(s)
+// Calling functions
 $(function() {
-    // Slide to the left - Function
+    // Sliding to the left
     $(".prev").click(slideLeft);
 
-    // Slide to the right - Function
+    // Sliding to the right
     $(".next").click(slideRight);
 
     // Clicking blue buttons
     $(".fas.fa-circle").click(clickButton);
+
+    // Enabling keyboard buttons to slide images
+    $(document).keydown(function(event) {
+        if ((event.which === 8) || (event.which === 37)) {
+            slideLeft();
+        } else if ((event.which === 13) || (event.which === 39)) {
+            slideRight();
+        }
+    });
 });
