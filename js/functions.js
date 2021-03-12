@@ -34,3 +34,17 @@ function slideRight() {
         activeBtn.next().addClass("active");
     }
 };
+
+// Matching blue buttons with respective images
+function clickButton() {
+    // Removing and adding active "status" to blue buttons
+    $(this).siblings().removeClass("active");
+    $(this).addClass("active");
+    
+    // Variable
+    var matchingImg = $(".images > img");
+
+    // Matching respective image
+    matchingImg.eq($(this).index()).addClass('active');
+    matchingImg.eq($(this).index()).siblings().removeClass('active');
+}

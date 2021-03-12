@@ -7,4 +7,7 @@ $(function() {
 
     // Slide to the right - Function
     $(".next").click(slideRight);
+
+    // Clicking blue buttons
+    $(".fas.fa-circle").click(clickButton);
 });
